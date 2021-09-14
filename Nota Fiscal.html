@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <title>Formulário de NF</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+</head>
+<body style="background-color: #F8F8F8; position: relative; min-height: 100vh; ">
+
+<header class="index-cabecalho">
+    <nav class="menu-flex">
+      <ul>
+        <li class="index-menu-logo"><img src="http://www.bosal.com/themes/itr_theme/images/logo-bosal.png" alt=""></li>
+        <li class="index-menu-itens index-menu-ativo"><a href="#">Página Inicial</a></li>
+        <li class="index-menu-itens"><a href="#">Formulários</a></li>
+        <li class="index-menu-itens"><a href="#">Itens para Aprovação</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="index-main">
+  <div class="form">
+
+    <div class="container-fluid" style="background-color: #FFFFFF; border: #000000; margin-top: 15px; margin-left: 15px; margin-bottom: 15px; margin-right: 15px; padding-top: 10px;padding-bottom: 10px;">
+  <div>
+    <img src="http://www.bosal.com/themes/itr_theme/images/logo-bosal.png" style="margin-bottom: 10px;"><br>
+    <b><h5>SOLICITAÇÃO DE EMISSÃO DE NOTA FISCAL</h5></b>
+  </div>
+
+</div>
+  
+<div class="container-fluid" style="background-color: #FFFFFF; border: #000000; margin-top: 15px; margin-left: 15px; margin-bottom: 15px; margin-right: 15px; padding-top: 10px; padding-bottom: 10px;">
+  <b><h3>Dados do Solicitante</h3></b>
+  <div class="row"style="margin-top: 20px;">
+    <div class="col-4">
+    <label>Nome do Solicitante:</label>
+    <input type="text">
+    </div>
+    <div class="col-4">
+      <label>Depto:</label>
+      <input type="text">
+      </div>
+      <div class="col-4">
+        <label>Ramal:</label>
+        <input type="text">
+        </div>
+  </div>
+  <div class="row"style="margin-top: 18px;">
+    <div class="col-4">
+    <label>Data da Utilização da NF:</label>
+    <input id="date" type="date">
+    </div>
+    <div class="col-4">
+      <label>Hora da Utilização da NF:</label>
+      <input type='time' value='now'/>
+    <span class="validity"></span>
+      </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="background-color: #FFFFFF; border: #000000; margin-top: 15px; margin-left: 15px; margin-bottom: 15px; margin-right: 15px; padding-top: 10px; padding-bottom: 10px;">
+  <h3>Dados da Solicitação/Tipo da Nota Fiscal - Cliente</h3>
+  <div class="row"style="margin-top: 20px;">
+    <div class="col-4">
+      <label for="CodClienteLoja">Cód. Cliente:</label>
+      <input id="CodClienteLoja" type="text" required/>
+  </div>
+  <div class="col-4">
+      <label for="Nome">Nome Cliente:</label>
+      <input id="Nome" type="text" required/>
+  </div>
+  <div class="col-4">
+      <label>Tipo da NF:</label>
+    <select name="mySelect">
+      <option value="Remessa">Remessa</option> 
+      <option value="Industrialização">Industrialização</option>
+      <option value="Retorno">Retorno</option>
+      <option value="Operação Triangular">Operação Triangular</option>
+      <option value="Teste com Retorno">Teste com Retorno</option>
+      <option value="Teste sem Retorno">Teste sem Retorno</option>
+      <option value="Devolução">Devolução</option>
+      <option value="Conserto">Conserto</option>
+      <option value="Venda">Venda</option>
+      <option value="Doação">Doação</option>
+      <option value="Outros">Outros</option>
+    </select>
+    <div id="inputOculto">
+      <input type="text" />
+    </div>
+  </div>
+  </div>
+  <div class="row"style="margin-top: 18px;">
+    <div class="col-4">
+      <label>Operação Triangular:</label>
+  </div>
+  <div class="col-4">
+      <label>2.° Beneficiador:</label>
+      <input type="text"/>
+  </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="background-color: #FFFFFF; border: #000000; margin-top: 15px; margin-left: 15px; margin-bottom: 15px; margin-right: 15px; padding-top: 10px; padding-bottom: 10px;">
+  <h3>Dados da Solicitação/Tipo da Nota Fiscal - Fornecedor</h3>
+  <div class="row"style="margin-top: 20px;">
+    <div class="col-4">
+      <label for="CodFornLoja">Cód. Fornecedor</label>
+        <input id="CodFornLoja" type="text" required/>
+  </div>
+  <div class="col-4">
+    <label for="Nome">Nome Fornecedor:</label>
+    <input id="Nome" type="text" required/>
+  </div>
+   <div class="col-4">
+      <label>Tipo da NF:</label>
+    <select name="mySelect1">
+      <option value="Remessa1">Remessa</option> 
+      <option value="Industrialização1">Industrialização</option>
+      <option value="Retorno1">Retorno</option>
+      <option value="Operação Triangular1">Operação Triangular</option>
+      <option value="Teste com Retorno1">Teste com Retorno</option>
+      <option value="Teste sem Retorno1">Teste sem Retorno</option>
+      <option value="Devolução1">Devolução</option>
+      <option value="Conserto1">Conserto</option>
+      <option value="Venda1">Venda</option>
+      <option value="Doação1">Doação</option>
+      <option value="Outros1">Outros</option>
+    </select>
+    <div id="inputOculto1">
+      <input type="text" />
+    </div>
+  </div>
+  </div>
+  <div class="row"style="margin-top: 18px;">
+    <div class="col-4">
+      <label>Operação Triangular:</label>
+  </div>
+  <div class="col-4">
+      <label>2.° Beneficiador:</label>
+      <input type="text"/>
+  </div>
+  </div>
+</div>
+
+
+<div class="container-fluid" style="background-color: #FFFFFF; border: #000000; margin-top: 15px; margin-left: 15px; margin-bottom: 15px; margin-right: 15px; padding-top: 10px; padding-bottom: 10px;">
+  <h3>Dados do Produto</h3>
+  <table id='tabela' style="width: auto;">         
+    <tr>
+        <th class="tablemargin">Código</th>
+        <th class="tablemargin">Qtde.</th>
+        <th class="tablemargin">N.° OP (P.C.P)</th>
+        <th class="tablemargin">TP</th>
+        <th class="tablemargin">AZ</th>
+        <th class="tablemargin">UM</th>
+        <th class="tablemargin">Descrição</th>
+        <th class="tablemargin">Valor Unitário</th>
+    </tr>
+    
+    <tr>
+        <td class="tablemargin"><input id="CodProd" type="text" style="width: 90px;"> </td>
+        <td class="tablemargin"><input id="Qtde" type="text" style="width: 90px;"> </td>
+        <td class="tablemargin"><input id="PCP" type="text" style="width: 90px;"> </td>
+        <td class="tablemargin"><input id="TP" type="text" style="width: 40px;"> </td>
+        <td class="tablemargin"><input id="AZ" type="text" style="width: 40px;"> </td>
+        <td class="tablemargin"><input id="UM" type="text" style="width: 40px;"> </td>
+        <td class="tablemargin"><input id="Descricao" type="text" style="width: 300px;"> </td>
+        <td class="tablemargin"><input id="ValorUnit" type="text" style="width: 100px;"> </td>
+        <td><label action="adicionar">Add </label></td>
+    </tr>
+
+
+</table>
+</div>
+
+<div class="container-fluid" style="background-color: #FFFFFF; border: #000000; margin-top: 15px; margin-left: 15px; margin-bottom: 15px; margin-right: 15px; padding-top: 10px; padding-bottom: 10px;">
+  <h3>Volumes</h3>
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-4">
+    <label>Qtde. Volumes:</label>
+    <input type="text">
+    </div>
+    <div class="col-4">
+      <label>Tipo de volume utilizado:</label>
+      <input type="text">
+      </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="background-color: #FFFFFF; border: #000000; margin-top: 15px; margin-left: 15px; margin-bottom: 15px; margin-right: 15px; padding-top: 10px; padding-bottom: 10px;">
+  <h3>Dados da Embalagem</h3>
+  <table id='tabela1' style="width: auto;">         
+    <tr>
+        <th class="tablemargin">Código</th>
+        <th class="tablemargin">Qtde.</th>
+        <th class="tablemargin">N.° OP (P.C.P)</th>
+        <th class="tablemargin">TP</th>
+        <th class="tablemargin">AZ</th>
+        <th class="tablemargin">UM</th>
+        <th class="tablemargin">Descrição</th>
+        <th class="tablemargin">Valor Unitário</th>
+    </tr>
+    
+    <tr>
+        <td class="tablemargin"><input id="CodEmb" type="text" style="width: 90px;"> </td>
+        <td class="tablemargin"><input id="Qtd" type="text" style="width: 90px;"> </td>
+        <td class="tablemargin"><input id="PCPN" type="text" style="width: 90px;"> </td>
+        <td class="tablemargin"><input id="TPO" type="text" style="width: 40px;"> </td>
+        <td class="tablemargin"><input id="AZM" type="text" style="width: 40px;"> </td>
+        <td class="tablemargin"><input id="UMI" type="text" style="width: 40px;"> </td>
+        <td class="tablemargin"><input id="Descric" type="text" style="width: 300px;"> </td>
+        <td class="tablemargin"><input id="ValorUni" type="text" style="width: 100px;"> </td>
+        <td><label action="adicionar1">Add </label></td>
+    </tr>
+
+    
+</table>
+
+</div>
+
+<div class="container-fluid" style="background-color: #FFFFFF; border: #000000; margin-top: 15px; margin-left: 15px; margin-bottom: 15px; margin-right: 15px; padding-top: 10px; padding-bottom: 10px;">
+  <h3>Total</h3>
+  <div class="row"style="margin-top: 20px;">
+    <div class="col-4">
+    <label>Quantidade:</label>
+    <input type="text">
+    </div>
+    <div class="col-4">
+      <label>Valor:</label>
+      <input type="text">
+      </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="background-color: #FFFFFF; border: #000000; margin-top: 15px; margin-left: 15px; margin-bottom: 15px; margin-right: 15px; padding-top: 10px; padding-bottom: 10px;">
+  <h3>Dados da Transportadora</h3>
+  <div class="row"style="margin-top: 20px;">
+    <div class="col-4">
+    <label>Cód. da transportadora:</label>
+    <input type="text">
+    </div>
+    <div class="col-4">
+      <label>Nome da transportadora:</label>
+      <input type="text">
+      </div>
+    <div class="col-4">
+    <label style="margin-right: 20px;">Responsável pelo frete (custo):</label>
+    <input style="margin-right: 5px;" type="radio" name="Opção" value="bosal">Bosal
+    <input style="margin-left: 30px; margin-right: 5px;" type="radio" name="Opção" value="destinatario">Destinatário
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="background-color: #FFFFFF; border: #000000; margin-top: 15px; margin-left: 15px; margin-bottom: 15px; margin-right: 15px; padding-top: 10px; padding-bottom: 10px;">
+  <h3>Outras Informações Adicionais</h3>
+  <div class="row" style="padding-left: 20px;">
+  <textarea style="margin-left: auto;margin-right: auto;" name="mytextarea" id="txtarea" rows="4" cols="100"></textarea>
+  </div>
+<br>
+<div style="padding-left: 15px;">
+  <input type="submit" value="Enviar" style="background-color: #ED1B2F; border-color: #000000; color: #ffffff; width: 130px; height: 40px;" onClick="window.print(); return true">
+</div>
+</div>
+
+</div>
+</main>
+
+</body>
+
+<script>
+
+   //MySelect - input do campo outros
+  $(document).ready(function() {
+  $('#inputOculto').hide();
+  $('#mySelect').change(function() {
+    if ($('#mySelect').val() == 'Outros') {
+      $('#inputOculto').show();
+    } else {
+      $('#inputOculto').hide();
+    }
+  });
+});
+
+//MySelect1 - input do campo outros
+$(document).ready(function() {
+  $('#inputOculto1').hide();
+  $('#mySelect1').change(function() {
+    if ($('#mySelect1').val() == 'Outros1') {
+      $('#inputOculto1').show();
+    } else {
+      $('#inputOculto1').hide();
+    }
+  });
+});
+
+
+//TimeNow
+$(function(){     
+  var d = new Date(),        
+      h = d.getHours(),
+      m = d.getMinutes();
+  if(h < 10) h = '0' + h; 
+  if(m < 10) m = '0' + m; 
+  $('input[type="time"][value="now"]').each(function(){ 
+    $(this).attr({'value': h + ':' + m});
+  });
+});
+
+
+  //MySelects - Pegar os valores
+  //function update() {
+        //var select = document.getElementById('mySelect1');
+        //var option = select.options[select.selectedIndex];
+
+       // document.getElementById('value').value = option.value;
+       // document.getElementById('text').value = option.text;
+     // }
+
+     // update();
+     
+
+//API's para preenchimento
+$("#CodClienteLoja").focusout(function(){
+            //Início do Comando AJAX
+            $.ajax({
+                //O campo URL diz o caminho de onde virá os dados
+                //É importante concatenar o valor digitado no CEP
+                url: 'http://10.50.1.31:8099/rest/APIFORMBPM/CLIENTES?CLIENTELOJA=' + $(this).val(),
+                //Aqui você deve preencher o tipo de dados que será lido,
+                //no caso, estamos lendo JSON.
+                dataType: 'json',
+                //SUCESS é referente a função que será executada caso
+                //ele consiga ler a fonte de dados com sucesso.
+                //O parâmetro dentro da função se refere ao nome da variável
+                //que você vai dar para ler esse objeto.
+                success: function(resposta){
+                    //Agora basta definir os valores que você deseja preencher
+                    //automaticamente nos campos acima.
+                    $("#Nome").val(resposta.Nome);
+                    //Vamos incluir para que o Número seja focado automaticamente
+                    //melhorando a experiência do usuário
+                }
+            });
+        });
+
+        $("#CodFornLoja").focusout(function(){
+            //Início do Comando AJAX
+            $.ajax({
+                //O campo URL diz o caminho de onde virá os dados
+                //É importante concatenar o valor digitado no CEP
+                url: 'http://10.50.1.31:8099/rest/APIFORMBPM/FORNECED?FORNECELOJA=' + $(this).val(),
+                //Aqui você deve preencher o tipo de dados que será lido,
+                //no caso, estamos lendo JSON.
+                dataType: 'json',
+                //SUCESS é referente a função que será executada caso
+                //ele consiga ler a fonte de dados com sucesso.
+                //O parâmetro dentro da função se refere ao nome da variável
+                //que você vai dar para ler esse objeto.
+                success: function(resposta){
+                    //Agora basta definir os valores que você deseja preencher
+                    //automaticamente nos campos acima.
+                    $("#Nome").val(resposta.Nome);
+                    //Vamos incluir para que o Número seja focado automaticamente
+                    //melhorando a experiência do usuário
+                }
+            });
+        });
+
+        $("#CodProd").focusout(function(){
+            //Início do Comando AJAX
+            $.ajax({
+                //O campo URL diz o caminho de onde virá os dados
+                //É importante concatenar o valor digitado no CEP
+                url: 'http://10.50.1.31:8099/rest/APIFORMBPM/PRODUTOS?CODPRODUTO=' + $(this).val(),
+                //Aqui você deve preencher o tipo de dados que será lido,
+                //no caso, estamos lendo JSON.
+                dataType: 'json',
+                //SUCESS é referente a função que será executada caso
+                //ele consiga ler a fonte de dados com sucesso.
+                //O parâmetro dentro da função se refere ao nome da variável
+                //que você vai dar para ler esse objeto.
+                success: function(resposta){
+                    //Agora basta definir os valores que você deseja preencher
+                    //automaticamente nos campos acima.
+                    $("#Descricao").val(resposta.Descricao);
+                    $("#UM").val(resposta.UM);
+                    //Vamos incluir para que o Número seja focado automaticamente
+                    //melhorando a experiência do usuário
+                }
+            });
+        });
+
+    var lista_itens = [];
+    var tabela = $("#tabela");
+    var botao_adicionar = $('label[action="adicionar"]');
+
+botao_adicionar.on("click", function() {
+    adicionarProduto();
+});
+
+function adicionarProduto() {
+  let item = $('<tr>' +
+    '<td>' + $('#CodProd').val() + '</td>' +
+    '<td>' + $('#Qtde').val() + '</td>' +
+    '<td>' + $('#PCP').val() + '</td>' +
+    '<td>' + $('#TP').val() + '</td>' +
+    '<td>' + $('#AZ').val() + '</td>' +
+    '<td>' + $('#UM').val() + '</td>' +
+    '<td>' + $('#Descricao').val() + '</td>' +
+    '<td>' + $('#ValorUnit').val() + '</td>' +
+    '<td>' + "X" + '</td>' +
+    '</tr>'
+  );
+
+  //Logo de Erro
+  //https://cdn.icon-icons.com/icons2/1380/PNG/512/vcsconflicting_93497.png
+  
+ lista_itens.push(
+ {Código: "CodProd", Qtde: "Qtde", PCP: "PCP", TP: "TP", AZ:"AZ", UM:"UM", Descricao: "Descricao", valor:"ValorUnit", delete: "X"}
+ );
+
+  tabela.append(item);
+}
+
+//Dados de Embalagem
+ var lista_itens1 = [];
+    var tabela1 = $("#tabela1");
+    var botao_adicionar1 = $('label[action="adicionar1"]');
+
+botao_adicionar1.on("click", function() {
+    adicionarProduto1();
+});
+
+function adicionarProduto1() {
+  let item = $('<tr>' +
+    '<td>' + $('#CodEmb').val() + '</td>' +
+    '<td>' + $('#Qtd').val() + '</td>' +
+    '<td>' + $('#PCPN').val() + '</td>' +
+    '<td>' + $('#TPO').val() + '</td>' +
+    '<td>' + $('#AZM').val() + '</td>' +
+    '<td>' + $('#UMI').val() + '</td>' +
+    '<td>' + $('#Descric').val() + '</td>' +
+    '<td>' + $('#ValorUni').val() + '</td>' +
+    '</tr>'
+  );
+
+  //Logo de Erro
+  //https://cdn.icon-icons.com/icons2/1380/PNG/512/vcsconflicting_93497.png
+  
+ lista_itens1.push(
+ {Cód: "CodEmb", Qtd: "Qtd", PC: "PCPN", T: "TPO", A:"AZM", U:"UMI", Descric: "Descric", valoru:"ValorUni"}
+ );
+
+  tabela1.append(item);
+}
+
+
+
+</script>
+
+<style type="text/css">
+  .container-fluid{
+    width: auto;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.tablemargin {
+  padding-right: 10px;
+}
+
+.index-cabecalho {
+  background-color: #E6E6E6;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.menu-flex ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.index-menu-ativo {
+  text-decoration: underline;
+}
+
+.index-menu-logo {
+  margin-right: auto;
+  margin-left: 30px;
+}
+
+.index-menu-logo img {
+  width: 150px;
+/*   vertical-align: middle;
+  padding: 5px 0 5px 0; */
+}
+
+.menu-flex .index-menu-itens {
+  margin-left: 5px;
+  padding: 20px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.menu-flex .index-menu-itens a {
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.menu-flex .index-menu-itens:last-child {
+  margin-right: 30px;
+}
+
+.index-main {
+  width: 100%;
+  height: 2000px;
+  background-color: #DDD;
+}
+
+.butdelete {
+  background:transparent;
+}
+
+div {
+      text-align: center;
+    }
+
+</style>
+
+</html>
